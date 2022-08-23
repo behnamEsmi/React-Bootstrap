@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import Customers from "./components/customers";
 import { Route, Redirect, Switch } from "react-router-dom";
+import Customers from "./components/customers";
 import BanksName from "./components/banksName";
 import Rentals from "./components/rentals";
 import NotFound from "./components/notFound";
 import NavBar from "./components/navBar";
+import LoginForm from "./components/loginForm";
 import "./App.css";
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <NavBar />
       <main className="container">
         <Switch>
+          <Route path="/login" component={LoginForm}></Route>
           <Route path="/customers" component={Customers}></Route>
           <Route path="/BanksName" component={BanksName}></Route>
           <Route path="/rentals" component={Rentals}></Route>
